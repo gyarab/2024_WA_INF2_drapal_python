@@ -14,9 +14,44 @@ def split_into_threes(text):
         raise ValueError("Invalid argument. 'text' must be a string.")
     return [text[i:i+3] for i in range(0, len(text), 3)]
 
+def caesar_encode(text):
+    if not isinstance(text, str):
+        raise ValueError("Invalid argument. 'text' must be a string.")
+    result = ''
+    for c in text:
+        if not c.isascii():
+            raise ValueError("Invalid argument.")
+        if c.isalpha():
+            ascii_val = ord(c)
+            if c.isupper():
+                decoded_val = (ascii_val - 65 + 3) % 26 + 65
+            else:
+                decoded_val = (ascii_val - 97 + 3) % 26 + 97
+            result += chr(decoded_val)
+        else:
+            result += c
+    return result
+
+def caesar_decode(text):
+    if not isinstance(text, str):
+        raise ValueError("Invalid argument. 'text' must be a string.")
+    result = ''
+    for c in text:
+        if not c.isascii():
+            raise ValueError("Invalid argument.")
+        if c.isalpha():
+            ascii_val = ord(c)
+            if c.isupper():
+                decoded_val = (ascii_val - 65 - 3) % 26 + 65
+            else:
+                decoded_val = (ascii_val - 97 - 3) % 26 + 97
+            result += chr(decoded_val)
+        else:
+            result += c
+    return result
 if __name__ == '__main__':
-    print(split_into_threes('abcdef'))
-    print(split_into_threes('abcdefgh'))
-    print(split_into_threes(123))
+    print(caesar_encode("Hello."))
+    print(caesar_decode("Khoor."))
+    print(caesar_encode("Arabská"))
     
     
