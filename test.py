@@ -38,7 +38,7 @@ def caesar_decode(text):
     result = ''
     for c in text:
         if not c.isascii() or c.isdigit():
-            raise ValueError("Invalid argument.")
+            raise ValueError("Invalid character.")
         if c.isalpha():
             ascii_val = ord(c)
             if c.isupper():
@@ -52,6 +52,6 @@ def caesar_decode(text):
 if __name__ == '__main__':
     print(caesar_encode("Hello."))
     print(caesar_decode("Khoor."))
-    print(caesar_encode("Arabská"))
+    print(caesar_encode("123"))
     
     
