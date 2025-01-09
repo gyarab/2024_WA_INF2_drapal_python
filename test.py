@@ -19,7 +19,7 @@ def caesar_encode(text):
         raise ValueError("Invalid argument. 'text' must be a string.")
     result = ''
     for c in text:
-        if not c.isascii():
+        if not c.isascii() or c.isdigit():
             raise ValueError("Invalid argument.")
         if c.isalpha():
             ascii_val = ord(c)
@@ -37,7 +37,7 @@ def caesar_decode(text):
         raise ValueError("Invalid argument. 'text' must be a string.")
     result = ''
     for c in text:
-        if not c.isascii():
+        if not c.isascii() or c.isdigit():
             raise ValueError("Invalid argument.")
         if c.isalpha():
             ascii_val = ord(c)
