@@ -69,6 +69,7 @@ def morse(text):
             result += morse_alphabet[c.upper()] + ' '
         elif c == ' ':
             result += ' / '
+    result = result.strip()
     return result
 
 if __name__ == '__main__':
