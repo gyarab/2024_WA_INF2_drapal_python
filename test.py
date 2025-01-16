@@ -68,7 +68,7 @@ def morse(text):
         if c.isalnum():
             result += morse_alphabet[c.upper()] + ' '
         elif c == ' ':
-            result += ' / '
+            result += '/ '
     result = result.strip()
     return result
 
