@@ -49,9 +49,30 @@ def caesar_decode(text):
         else:
             result += c
     return result
+
+import unicodedata as ud
+
+def morse(text):
+    if not isinstance(text, str):
+        raise ValueError("Invalid argument. 'text' must be a string.")
+    morse_alphabet = {
+        'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
+        'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
+        'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+        'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+        '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'
+    }
+    result = ''
+    text = ud.normalize('NFD', text)
+    for c in text:
+        if c.isalnum():
+            result += morse_alphabet[c.upper()] + ' '
+        elif c == ' ':
+            result += ' / '
+    return result
+
 if __name__ == '__main__':
-    print(caesar_encode("Hello."))
-    print(caesar_decode("Khoor."))
-    print(caesar_encode("123"))
+    print(morse("Ahoj světe!"))
+    print(morse("A což?"))
     
     
