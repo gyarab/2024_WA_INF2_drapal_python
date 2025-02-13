@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 import requests
+import json
 
 # data = [
 #     {
@@ -16,31 +17,16 @@ import requests
 #     'Four',
 # ]
 
-def homepage(request):
+def home(request):
+    with open('articles.json', encoding='utf-8') as f:
+        articles = json.load(f)
+
+        return render(request, 'content/home.html', {'articles': articles})
     
-    ret = '''
-    <!DOCTYPE html>
-    <html>
-    <head></head>
-    <body>
-    <ul>
-    '''
+def article(request, id):
+    with open('articles.json', encoding='utf-8') as f:
+        articles = json.load(f)
 
-    url = 'https://kf-ga.github.io/_downloads/55747ce1b3aa6fea6b8a71e2b55912de/articles.json'
-    res = requests.get(url)
-    res.raise_for_status()
-    data = res.json()
-
-    for i in data:
-        ret += f"""
-        <li>
-            {i['category']} <a href="{i['link']}">
-                {i['title']}
-            </a><br>
-            <img src="{i['image']}">
-            <p>{i['perex']}</p>
-        </li>
-        """
-    ret += '</ul>'
-
-    return HttpResponse(ret)
+    article = articles[id]
+    
+    return render(request, 'content/article.html', {'article': article})
