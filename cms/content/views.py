@@ -4,6 +4,8 @@ from django.http import HttpResponse
 import requests
 import json
 
+from .models import Article, Author, Category
+
 # data = [
 #     {
 #         'title': 'web',
@@ -18,15 +20,20 @@ import json
 # ]
 
 def home(request):
-    with open('articles.json', encoding='utf-8') as f:
-        articles = json.load(f)
-
-        return render(request, 'content/home.html', {'articles': articles})
+    articles = Article.objects.order_by('title')
+    return render(request, 'content/home.html', {'articles': articles})
     
 def article(request, id):
-    with open('articles.json', encoding='utf-8') as f:
-        articles = json.load(f)
+    article = Article.objects.get(pk=id)
 
-    article = articles[id]
-    
     return render(request, 'content/article.html', {'article': article})
+
+def author(request, id):
+    author = Author.objects.get(pk=id)
+
+    return render(request, 'content/author.html', {'author': author})
+
+def category(request, id):
+    category = Category.objects.get(pk=id)
+
+    return render(request, 'content/category.html', {'category': category})
