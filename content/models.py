@@ -1,14 +1,5 @@
 from django.db import models
 
-class Building(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    architect = models.ManyToManyField('Architect')
-    style = models.ForeignKey('Style', on_delete=models.CASCADE)
-    year = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-
 class Architect(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
@@ -21,4 +12,11 @@ class Style(models.Model):
     def __str__(self):
         return self.name
 
-# Create your models here.
+class Building(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    architects = models.ManyToManyField(Architect, related_name='buildings')
+    style = models.ForeignKey(Style, on_delete=models.CASCADE, related_name='buildings')
+    year = models.IntegerField()
+
+    def __str__(self):
+        return self.name

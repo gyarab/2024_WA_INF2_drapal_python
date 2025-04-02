@@ -1,0 +1,96 @@
+[
+    {
+        "model": "content.architect",
+        "pk": 1,
+        "fields": {
+            "name": "Petr Parléř"
+        }
+    },
+    {
+        "model": "content.architect",
+        "pk": 2,
+        "fields": {
+            "name": "mistr Otto"
+        }
+    },
+    {
+        "model": "content.architect",
+        "pk": 3,
+        "fields": {
+            "name": "Paolo della Stella"
+        }
+    },
+    {
+        "model": "content.architect",
+        "pk": 4,
+        "fields": {
+            "name": "Bonifác Wolmut"
+        }
+    },
+    {
+        "model": "content.architect",
+        "pk": 5,
+        "fields": {
+            "name": "Josef Schulz"
+        }
+    },
+    {
+        "model": "content.style",
+        "pk": 1,
+        "fields": {
+            "name": "gotika"
+        }
+    },
+    {
+        "model": "content.style",
+        "pk": 2,
+        "fields": {
+            "name": "renesance"
+        }
+    },
+    {
+        "model": "content.style",
+        "pk": 3,
+        "fields": {
+            "name": "novorenesance"
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 1,
+        "fields": {
+            "name": "Karlův Most",
+            "style": 1,
+            "year": 1357,
+            "architects": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 2,
+        "fields": {
+            "name": "Letohrádek královny Anny",
+            "style": 2,
+            "year": 1538,
+            "architects": [
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 3,
+        "fields": {
+            "name": "Národní muzeum",
+            "style": 3,
+            "year": 1885,
+            "architects": [
+                5
+            ]
+        }
+    }
+]

@@ -1,0 +1,19 @@
+{% extends "content/base.html" %}
+
+{% block title %}
+    {{ building.name }}
+{% endblock %}
+
+{% block header %}
+    {{ building.name }}
+{% endblock %}
+
+{% block main %}
+    <p>
+        {% for architect in building.architects.all %}
+            <a href="/architect/{{ architect.id }}">{{ architect.name }}</a>
+        {% endfor %}
+    </p>
+    <p><a href="/style/{{ building.style.id }}">{{ building.style }}</a></p>
+    <p>{{ building.year }}</p>
+{% endblock %}
