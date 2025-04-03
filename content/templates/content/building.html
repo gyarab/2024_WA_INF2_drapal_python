@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block main %}
+    <img src="{{ building.image.url }}" alt="{{ building.name }}">
     <p>
         {% for architect in building.architects.all %}
             <a href="/architect/{{ architect.id }}">{{ architect.name }}</a>

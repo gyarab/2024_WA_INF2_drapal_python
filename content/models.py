@@ -17,6 +17,7 @@ class Building(models.Model):
     architects = models.ManyToManyField(Architect, related_name='buildings')
     style = models.ForeignKey(Style, on_delete=models.CASCADE, related_name='buildings')
     year = models.IntegerField()
+    image = models.ImageField(upload_to='images/buildings', null=True)
 
     def __str__(self):
         return self.name

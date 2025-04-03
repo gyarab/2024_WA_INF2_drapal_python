@@ -9,7 +9,6 @@ def home(request):
 
 def building(request, id):
     building = get_object_or_404(Building, pk=id)
-    print(building.architects.all())
 
     return render(request, 'content/building.html', {'building': building})
 
