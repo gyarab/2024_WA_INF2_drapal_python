@@ -11,6 +11,5 @@
 {% block main %}
     {% for building in buildings %}
         <a href="/building/{{ building.id }}"><h2>{{ building.name }}</h2></a>
-        <p>{{ building.year }}</p>
     {% endfor %}
 {% endblock %}

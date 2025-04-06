@@ -9,12 +9,27 @@
 {% endblock %}
 
 {% block main %}
-    <img src="{{ building.image.url }}" alt="{{ building.name }}">
-    <p>
-        {% for architect in building.architects.all %}
-            <a href="/architect/{{ architect.id }}">{{ architect.name }}</a>
-        {% endfor %}
-    </p>
-    <p><a href="/style/{{ building.style.id }}">{{ building.style }}</a></p>
-    <p>{{ building.year }}</p>
+    <div class="content">
+        {% if building.image %}
+            <img src="{{ building.image.url }}" alt="{{ building.name }}">
+        {% endif %}
+        <ul>
+            <li>
+                Rok stavby: {{ building.year }}
+            </li>
+            <li>
+                Architektonický sloh: <a href="/style/{{ building.style.id }}">{{ building.style }}</a>
+            </li>
+            <li>
+                {% if building.architects.count == 1 %}
+                Architekt:
+                {% else %}
+                Architekti:
+                {% endif %}
+                {% for architect in building.architects.all %}
+                    <a href="/architect/{{ architect.id }}">{{ architect.name }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </li>
+        </ul>
+    </div>
 {% endblock %}

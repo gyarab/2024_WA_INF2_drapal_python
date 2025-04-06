@@ -3,91 +3,66 @@
         "model": "content.architect",
         "pk": 1,
         "fields": {
-            "name": "Petr Parléř"
+            "name": "Petr Parléř",
+            "bio": "*1333, †13.6.1399\r\nNejvýznamější představitel gotické architektury v Čechách"
         }
     },
     {
         "model": "content.architect",
         "pk": 2,
         "fields": {
-            "name": "mistr Otto"
+            "name": "mistr Otto",
+            "bio": "†1375"
         }
     },
     {
         "model": "content.architect",
         "pk": 3,
         "fields": {
-            "name": "Paolo della Stella"
+            "name": "Paolo della Stella",
+            "bio": "*15. století, †1552"
         }
     },
     {
         "model": "content.architect",
         "pk": 4,
         "fields": {
-            "name": "Bonifác Wolmut"
+            "name": "Bonifác Wolmut",
+            "bio": "*1510, †1579"
         }
     },
     {
         "model": "content.architect",
         "pk": 5,
         "fields": {
-            "name": "Josef Schulz"
+            "name": "Josef Schulz",
+            "bio": "*11.4.1840, †15.6.1917"
         }
     },
     {
         "model": "content.style",
         "pk": 1,
         "fields": {
-            "name": "gotika"
+            "name": "gotika",
+            "description": "12. - 15. století\r\nV Čechách od 13. století\r\nKláštery, kostely, hrady i městské stavby"
         }
     },
     {
         "model": "content.style",
         "pk": 2,
         "fields": {
-            "name": "renesance"
+            "name": "renesance",
+            "description": "14. - 17. století\r\nV Praze až od konce 15. století\r\nNejdříve mísení s gotickými prvky"
         }
     },
     {
         "model": "content.style",
         "pk": 3,
         "fields": {
-            "name": "novorenesance"
-        }
-    },
-    {
-        "model": "content.building",
-        "pk": 1,
-        "fields": {
-            "name": "Karlův Most",
-            "style": 1,
-            "year": 1357,
-            "architects": [
-                1,
-                2
-            ]
-        }
-    },
-    {
-        "model": "content.building",
-        "pk": 2,
-        "fields": {
-            "name": "Letohrádek královny Anny",
-            "style": 2,
-            "year": 1538,
-            "architects": [
-                3,
-                4
-            ]
-        }
-    },
-    {
-        "model": "content.building",
-        "pk": 3,
-        "fields": {
-            "name": "Národní muzeum",
-            "style": 3,
+            "name": "novorenesance",
+            "description": "2. polovina 19. století\r\nVychází z renesančních forem\r\nKulturní a reprezentativní budovy"}}, {"model": "content.building", "pk": 1, "fields": {"name": "Karlův Most", "style": 1, "year": 1357, "image": "images/buildings/Karluv_Most.webp", "architects": [1, 2]}}, {"model": "content.building", "pk": 2, "fields": {"name": "Letohrádek královny Anny", "style": 2, "year": 1538, "image": "images/buildings/Letohradek_kralovny_Anny.jpg", "architects": [3, 4]}}, {"model": "content.building", "pk": 3, "fields": {"name": "Národní muzeum", "style": 3,
             "year": 1885,
+            "image": "images/buildings/Narodni_Muzeum.jpg",
             "architects": [
                 5
             ]

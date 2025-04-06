@@ -1,17 +1,27 @@
 {% extends "content/base.html" %}
 
 {% block title %}
-    {{ style.name }}
+    {{ style.name|capfirst }}
 {% endblock %}
 
 {% block header %}
-    {{ style.name }}
+    {{ style.name|capfirst }}
 {% endblock %}
 
 {% block main %}
-    <p>
-        {% for building in style.buildings.all %}
-            <a href="/building/{{ building.id }}">{{ building.name }}</a>
+    <ul>
+        {% for line in style.description.splitlines %}
+            {% if line %}
+                <li>{{ line }}</li>
+            {% endif %}
         {% endfor %}
-    </p>
+    </ul>
+    <h2>Stavby</h2>
+    <ul>
+        {% for building in style.buildings.all %}
+            <li>
+                <a href="/building/{{ building.id }}">{{ building.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
