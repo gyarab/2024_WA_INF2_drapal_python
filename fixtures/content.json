@@ -60,7 +60,43 @@
         "pk": 3,
         "fields": {
             "name": "novorenesance",
-            "description": "2. polovina 19. století\r\nVychází z renesančních forem\r\nKulturní a reprezentativní budovy"}}, {"model": "content.building", "pk": 1, "fields": {"name": "Karlův Most", "style": 1, "year": 1357, "image": "images/buildings/Karluv_Most.webp", "architects": [1, 2]}}, {"model": "content.building", "pk": 2, "fields": {"name": "Letohrádek královny Anny", "style": 2, "year": 1538, "image": "images/buildings/Letohradek_kralovny_Anny.jpg", "architects": [3, 4]}}, {"model": "content.building", "pk": 3, "fields": {"name": "Národní muzeum", "style": 3,
+            "description": "2. polovina 19. století\r\nVychází z renesančních forem\r\nKulturní a reprezentativní budovy"
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 1,
+        "fields": {
+            "name": "Karlův Most",
+            "style": 1,
+            "year": 1357,
+            "image": "images/buildings/Karluv_Most.webp",
+            "architects": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 2,
+        "fields": {
+            "name": "Letohrádek královny Anny",
+            "style": 2,
+            "year": 1538,
+            "image": "images/buildings/Letohradek_kralovny_Anny.jpg",
+            "architects": [
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "content.building",
+        "pk": 3,
+        "fields": {
+            "name": "Národní muzeum",
+            "style": 3,
             "year": 1885,
             "image": "images/buildings/Narodni_Muzeum.jpg",
             "architects": [
