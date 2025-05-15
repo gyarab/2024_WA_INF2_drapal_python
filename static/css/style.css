@@ -34,7 +34,7 @@ h2 {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-img {
+.content img {
     border-radius: 15px;
     width: auto;
     max-width: 600px;
