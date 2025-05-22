@@ -11,7 +11,7 @@
 {% block main %}
     <div class="content">
         {% if building.image %}
-            <img src="{{ building.image.url }}" alt="{{ building.name }}">
+            <img src="/media/images/buildings/{{ building.image }}" alt="{{ building.name }}">
         {% endif %}
         <ul>
             <li>

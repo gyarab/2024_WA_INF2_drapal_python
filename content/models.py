@@ -19,7 +19,7 @@ class Building(models.Model):
     architects = models.ManyToManyField(Architect, related_name='buildings')
     style = models.ForeignKey(Style, on_delete=models.CASCADE, related_name='buildings')
     year = models.IntegerField()
-    image = models.ImageField(upload_to='images/buildings', null=True, blank=True)
+    image = models.CharField(null=True, blank=True, max_length=100)
     
     def __str__(self):
         return self.name
